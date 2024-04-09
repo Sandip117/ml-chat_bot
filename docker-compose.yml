@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+    atlas:
+        image: mongodb/atlas
+        privileged: true
+        command: |
+           /bin/bash -c "./entrypoint.sh"
+        volumes:
+           - data-cni:/etc/cni
+           - data-containers:/var/lib/containers/storage/volumes/mongod-local-data-dev/_data
+           - ./entrypoint.sh:/entrypoint.sh
+        ports:
+           - "0.0.0.0:27778:27017"
+        networks:
+          mlbot:
+           
+    mlbot:
+        image: mlbot
+        container_name: mlbot
+        environment:
+          OPENAI_API_KEY: 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
+        ports:
+          - "0.0.0.0:5000:5000"
+        networks:
+          local:
+          mlbot:
+           
+volumes:
+  data-cni:
+  data-containers:
+networks:
+  local:
+  mlbot:
+      

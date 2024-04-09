@@ -1,0 +1,11 @@
+flask==2.2.2
+Werkzeug==2.2.2
+pymongo
+langchain
+langchain_openai
+langchain_mongodb
+langchainhub
+scikit-learn
+scipy
+matplotlib
+bs4

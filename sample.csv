@@ -1,0 +1,114 @@
+content
+{"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:10", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Fetching request status from the DB. Current status is initializing workflow."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:10", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Requesting PACS retrieve."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:10", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Calling status update subprocess."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:10", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"0 subprocess of status manager running on the system."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:12", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Sleeping for 10 seconds."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:12", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Working on fetching the current status, locking DB flag."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:13", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registered files are: 15"}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:13", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Total number of files in this request: 192."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:13", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status is registering to CUBE."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:13", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Finished writing updated status to the DB, releasing lock."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:22", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Fetching request status from DB. Current status is registering to CUBE."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:22", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registering progress is 8% complete."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:22", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current feed request status is False"}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:22", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Calling status update subprocess."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:22", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"0 subprocess of status manager running on the system."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:24", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Sleeping for 10 seconds."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:24", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Working on fetching the current status, locking DB flag."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registered files are: 93"}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Total number of files in this request: 192."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status is registering to CUBE."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Finished writing updated status to the DB, releasing lock."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:35:31", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"No new manager subprocess started."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:35:31", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status response is registering to CUBE."}
+INFO:     192.168.123.65:43290 - "POST /api/v1/workflow HTTP/1.1" 200 OK
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:32", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Working on fetching the current status, locking DB flag."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:32", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registered files are: 141"}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:32", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Total number of files in this request: 192."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:32", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status is registering to CUBE."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:32", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Finished writing updated status to the DB, releasing lock."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:34", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Fetching request status from DB. Current status is registering to CUBE."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:34", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registering progress is 73% complete."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:34", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current feed request status is False"}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:34", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Calling status update subprocess."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:34", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"0 subprocess of status manager running on the system."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:36", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Sleeping for 10 seconds."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:36", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Working on fetching the current status, locking DB flag."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:37", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registered files are: 171"}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:37", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Total number of files in this request: 192."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:37", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status is registering to CUBE."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:37", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Finished writing updated status to the DB, releasing lock."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:35:41", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"No new manager subprocess started."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:35:41", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status response is registering to CUBE."}
+INFO:     192.168.123.65:37770 - "POST /api/v1/workflow HTTP/1.1" 200 OK
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:41", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Working on fetching the current status, locking DB flag."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:35:42", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"No new status subprocess started."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:35:42", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"No new manager subprocess started."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:35:42", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status response is registering to CUBE."}
+INFO:     192.168.123.65:37770 - "POST /api/v1/workflow HTTP/1.1" 200 OK
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:42", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registered files are: 192"}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:42", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Total number of files in this request: 192."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:42", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status is registering to CUBE."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:42", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Finished writing updated status to the DB, releasing lock."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:46", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Fetching request status from DB. Current status is registering to CUBE."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:46", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registering progress is 100% complete."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:46", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current feed request status is False"}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:46", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Fetching data path.."}
+SERVICES/PACS/MINICHRISORTHANC/ddcf2dae666914b629dcbb16-anonymized-20090701/MR-Brain_w_o_Contrast-98edede8b2-20130308/5-SAG_MPRAGE_220_FOV-40a1d66/
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:47", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Creating a new feed with feed name test-bf7c8ff050133ec637c336a3"}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:48", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"New feed created with feed_id 1."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:48", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Setting feed requested status to True in the DB"}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:48", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Adding plugin: {'name': 'pl-dylld', 'version': ''} to pl_inst: 1"}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:49", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Calling status update subprocess."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:49", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"0 subprocess of status manager running on the system."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:35:51", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Sleeping for 10 seconds."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:51", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Working on fetching the current status, locking DB flag."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:52", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registered files are: 192"}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:53", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Total number of files in this request: 192."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:53", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status is analyzing study."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:35:53", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Finished writing updated status to the DB, releasing lock."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:01", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Fetching request status from DB. Current status is analyzing study."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:01", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Exiting while loop. End of workflow_manager."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:36:15", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status response is analyzing study."}
+INFO:     192.168.123.65:54688 - "POST /api/v1/workflow HTTP/1.1" 200 OK
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:15", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Working on fetching the current status, locking DB flag."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:15", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Fetching request status from the DB. Current status is analyzing study."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:15", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"WARNING ", "msg":"Retrying request.5/5 retries left."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:15", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"WARNING ", "msg":"Setting feed requested status to False in the DB"}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:15", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Database is stale. No task performed."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:15", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Calling status update subprocess."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:15", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"1 subprocess of status manager running on the system."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:15", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"No new status subprocess started."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:15", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Sleeping for 10 seconds."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:16", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registered files are: 192"}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:17", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Total number of files in this request: 192."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:17", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status is analyzing study."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:17", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Finished writing updated status to the DB, releasing lock."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:36:24", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"No new manager subprocess started."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:36:24", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status response is analyzing study."}
+INFO:     192.168.123.65:53002 - "POST /api/v1/workflow HTTP/1.1" 200 OK
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:24", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Working on fetching the current status, locking DB flag."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registered files are: 192"}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Total number of files in this request: 192."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status is registering to CUBE."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Finished writing updated status to the DB, releasing lock."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Fetching request status from DB. Current status is registering to CUBE."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registering progress is 100% complete."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:25", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current feed request status is False"}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:26", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Fetching data path.."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:26", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Creating a new feed with feed name test-bf7c8ff050133ec637c336a3-retry#1"}
+SERVICES/PACS/MINICHRISORTHANC/ddcf2dae666914b629dcbb16-anonymized-20090701/MR-Brain_w_o_Contrast-98edede8b2-20130308/5-SAG_MPRAGE_220_FOV-40a1d66/
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:27", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"New feed created with feed_id 2."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:27", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Setting feed requested status to True in the DB"}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:27", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Adding plugin: {'name': 'pl-dylld', 'version': ''} to pl_inst: 3"}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:28", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Calling status update subprocess."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:28", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"0 subprocess of status manager running on the system."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:36:30", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"No new manager subprocess started."}
+ {"worker":"PFLINK          ","timestamp":"2024-03-21 15:36:30", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Current status response is registering to CUBE."}
+INFO:     192.168.123.65:50916 - "POST /api/v1/workflow HTTP/1.1" 200 OK
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:30", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Working on fetching the current status, locking DB flag."}
+ {"worker":"WORKFLOW_MGR    ","timestamp":"2024-03-21 15:36:30", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Sleeping for 10 seconds."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:31", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Working on fetching the current status, locking DB flag."}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:31", "db_key":"44451cfe0bc3cfc092a79eebcbc95dbb", "level":"INFO    ", "msg":"Registered files are: 192"}
+ {"worker":"STATUS_MGR      ","timestamp":"2024-03-21 15:36:32", "db_key":"44451cfe0bc3cfc0
