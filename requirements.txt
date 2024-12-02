@@ -1,9 +1,11 @@
 flask==2.2.2
 Werkzeug==2.2.2
 pymongo
-langchain
+langchain>=0.3.4
 langchain_openai
 langchain_mongodb
+langchain-community
+langchain_mistralai
 langchainhub
 scikit-learn
 scipy

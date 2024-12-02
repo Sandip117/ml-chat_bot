@@ -104,6 +104,7 @@
     </div>
 
     <script>
+
         function askQuestion() {
             var userQuestion = document.getElementById("user-input").value;
             document.getElementById("chat").innerHTML +=
@@ -111,22 +112,35 @@
                 "<div class='user-message'><img class='user-icon' src='/static/user.png' alt='User Icon'><md-block>" + userQuestion + "</md-block></div>" +
                 "</div>";
 
+
             // Send the question to the Flask server
             fetch('/ask', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify({ question: userQuestion }),
             })
-            .then(response => response.json())
-            .then(data => {
-                var answer = data.answer;
+            .then(response => {
+                // Set up the EventSource to listen for the SSE stream
+                const eventSource = new EventSource("/ask");
+
+                eventSource.onmessage = function(event) {
                 document.getElementById("chat").innerHTML +=
                     "<div class='message-container'>" +
-                    "<div class='bot-message'><img class='bot-icon' src='/static/chris_bot.png' alt='Bot Icon'><md-block>" + answer + "</md-block></div>" +
+                    "<div class='bot-message'><img class='bot-icon' src='/static/chris_bot.png' alt='Bot Icon'><md-block>" + event.data + "</md-block></div>" +
                     "</div>";
-            });
+
+                    // Auto-scroll to the bottom of the chat box
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                };
+        });
+<!--                var answer = data.answer;-->
+<!--                document.getElementById("chat").innerHTML +=-->
+<!--                    "<div class='message-container'>" +-->
+<!--                    "<div class='bot-message'><img class='bot-icon' src='/static/chris_bot.png' alt='Bot Icon'><md-block>" + answer + "</md-block></div>" +-->
+<!--                    "</div>";-->
+<!--            });-->
 
             // Clear input after asking
             document.getElementById("user-input").value = "";

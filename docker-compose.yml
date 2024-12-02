@@ -1,34 +1,21 @@
 version: '3.9'
 
 services:
-    atlas:
-        image: mongodb/atlas
-        privileged: true
-        command: |
-           /bin/bash -c "./entrypoint.sh"
-        volumes:
-           - data-cni:/etc/cni
-           - data-containers:/var/lib/containers/storage/volumes/mongod-local-data-dev/_data
-           - ./entrypoint.sh:/entrypoint.sh
-        ports:
-           - "0.0.0.0:27778:27017"
-        networks:
-          mlbot:
            
     mlbot:
         image: mlbot
         container_name: mlbot
         environment:
-          OPENAI_API_KEY: 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
+          OPENAI_API_KEY: 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
+          CUBE_URL: cube.chrisproject.org/api/v1/
+          CUBE_USERNAME: sandip
+          CUBE_PASSWORD: sandip1234
+          PROTOCOL: https
         ports:
           - "0.0.0.0:5000:5000"
         networks:
           local:
           mlbot:
-           
-volumes:
-  data-cni:
-  data-containers:
 networks:
   local:
   mlbot:
