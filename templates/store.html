@@ -97,11 +97,28 @@
     <div id="chat-container">
         <h1>Store Data</h1>
         <div id="chat"></div>
+        <input type="text" id="cube-url" placeholder="CUBE URL" onload="getCUBEendpoint();">
+        <div id="context">
+
+        </div>
+        <div id="rules">
+
+        </div>
         <input type="text" id="user-input" placeholder="Enter an URL..." onkeydown="if (event.key === 'Enter') askQuestion()">
         <button onclick="askQuestion()">Enter</button>
     </div>
 
     <script>
+        function getCUBEendpoint() {
+          document.getElementById("cube-url").value = "hello";
+          <!--var endpoint = fetch('/get_endpoint', {
+                                method: 'GET',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                }
+                            }).then(response => response.json());
+          document.getElementById("cube-url").value = endpoint;-->
+        }
         function askQuestion() {
             var userQuestion = document.getElementById("user-input").value;
             document.getElementById("chat").innerHTML +=

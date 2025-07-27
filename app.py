@@ -1,33 +1,45 @@
 import os
 from flask import Flask, render_template, request, jsonify, send_from_directory, Response
+from flask_socketio import SocketIO, emit
 from langchain_community.document_loaders import WebBaseLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 
-llm=ChatOpenAI(model="gpt-4o",temperature=0,openai_api_key=os.environ.get('OPENAI_API_KEY'),streaming=True, )
+# global variables
+llm=ChatOpenAI(model="gpt-4o",
+               temperature=0,
+               openai_api_key=os.environ.get('OPENAI_API_KEY'),
+               streaming=True)
 username = os.environ.get('CUBE_USERNAME')
 password = os.environ.get('CUBE_PASSWORD')
 url = os.environ.get('CUBE_URL')
 protocol = os.environ.get('PROTOCOL')
 
 app = Flask(__name__)
+socketio = SocketIO(app)
 
 
 
-# Function to get the most similar document based on user query
-def get_most_similar_document(query):
-    loader=WebBaseLoader([f"{protocol}://{username}:{password}@{url}"])
+#  Method to get the CUBE API endpoints from LLM
+def get_cube_endpoint(query):
+    # Routing
+    # cube_url = f"{protocol}://{username}:{password}@{url}"
+    cube_docs_url = f"{protocol}://{url}"
+    loader=WebBaseLoader([cube_docs_url])
     doc=loader.load()
-    splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=0,separators=["\n\n","\n","(?<=\.)"," "],length_function=len)
+    splitter=RecursiveCharacterTextSplitter(chunk_size=1000,
+                                            chunk_overlap=0,
+                                            separators=["\n\n","\n","(?<=\.)"," "],
+                                            length_function=len)
     docs=splitter.split_documents(doc)
     context = docs
 
     messages = [
         SystemMessage(
         content=f"You are ChRIS assistant. \
-                  Answer only by stating the API endpoint starting with https . \
-                  Add authentication credential as sandip:sandip1234 in the API. \
+                  Answer only by stating the API endpoint starting with http . \
+                  Add authentication credential as {username}:{password} in the API. \
                   Example: {protocol}://{username}:{password}@<api endpoint>. \
                   Do not include any filler words except links. \
                   Use only this context to answer my questions. \
@@ -35,7 +47,6 @@ def get_most_similar_document(query):
                   Example: My apologies, I am unable to answer your question. \
                   Don't look up in the internet for answers. \
                   Do not use mark down for replying hyperlinks. \
-                  Nicely format any code that you reply in markdown format. \
                   Here is your context: {context}. \
                   ================================================"
         ),
@@ -45,11 +56,19 @@ def get_most_similar_document(query):
         ]
     response = llm.invoke(messages)
     if "apologies," in str(response.content):
-        return response.content
+        emit('stream_response', {'data': response.content})
+        raise Exception(f'I could not find a matching CUBE API endpoint for your question.')
+    return response.content
 
-    loader=WebBaseLoader([str(response.content)])
+# Summarize API response using LLM
+def summarize_cube_response(api: str, question: str):
+    # Summarizing
+    loader=WebBaseLoader([api])
     doc=loader.load()
-    splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=0,separators=["\n\n","\n","(?<=\.)"," "],length_function=len)
+    splitter=RecursiveCharacterTextSplitter(chunk_size=1000,
+                                            chunk_overlap=0,
+                                            separators=["\n\n","\n","(?<=\.)"," "],
+                                            length_function=len)
     docs=splitter.split_documents(doc)
     messages = [
         SystemMessage(
@@ -62,10 +81,9 @@ def get_most_similar_document(query):
                   ================================================"
         ),
         HumanMessage(
-        content=query
+        content=question
         ),
         ]
-    
     response = llm.stream(messages)
     return response
     
@@ -82,29 +100,37 @@ def static_files(filename):
 @app.route('/')
 def chat():
     return render_template('chat.html')
-    
 
-# Endpoint for question answering
-@app.route('/ask', methods=['POST'])
-def ask_question():
-    user_query = request.json.get('question', '')
+# Endpoint for URL fetch page
+@app.route('/fetch')
+def fetch():
+    return render_template('store.html')
 
-    def generate(user_query):
+# Endpoint for Summary page
+@app.route('/summarize')
+def summarize():
+    return render_template('store.html')
 
-        # user_query = data['question']
-        answer = get_most_similar_document(user_query)
-        # Yield each part of the response as it comes in
-        for part in answer:
-            if 'choices' in part and 'delta' in part['choices'][0]:
-                content = part['choices'][0]['delta'].get('content', '')
-                yield f"data: {content}\n\n"  # Server-Sent Event format
+@app.route('/get_endpoint', methods=['GET'])
+def get_api():
+    return f"{protocol}://{username}:{password}@{url}"
 
-    #return jsonify({'answer': answer})
-    # Return the response as a stream
-    print(generate(user_query))
-    return Response(generate(user_query), content_type='text/event-stream')
-    
+# SocketIO event to handle message streaming
+@socketio.on('start_stream')
+def handle_message(data):
+    input_data = data['message']
+    try:
+        cube_api = get_cube_endpoint(input_data)
+        LLM_resp = summarize_cube_response(cube_api, input_data)
+        # Emit the response back to the frontend in chunks
+        for chunk in LLM_resp:
+            emit('stream_response', {'data': chunk.content})
+        emit('stream_response', {'data': ":~"})
+    except Exception as ex:
+        emit('stream_response',{'data': f"\n{ex}"})
+
+
 
 
 if __name__ == '__main__':
-    app.run(debug=True, threaded=True)
+    socketio.run(debug=True, threaded=True)

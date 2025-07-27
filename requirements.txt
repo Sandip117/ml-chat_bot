@@ -1,13 +1,12 @@
+# flask app dependencies
 flask==2.2.2
+flask-socketio
 Werkzeug==2.2.2
-pymongo
+
+# Langchain python dependencies
 langchain>=0.3.4
 langchain_openai
-langchain_mongodb
 langchain-community
-langchain_mistralai
-langchainhub
-scikit-learn
-scipy
-matplotlib
 bs4
+
+

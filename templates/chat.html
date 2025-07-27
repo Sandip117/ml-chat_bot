@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Bot</title>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
     <style>
     
         body {
@@ -93,58 +94,63 @@
             margin-right: 10px;
         }
     </style>
-    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
 </head>
 <body>
     <div id="chat-container">
         <h1>Ask Me About ChRIS!</h1>
-        <div id="chat"></div>
+        <div id="chat">
+        </div>
         <input type="text" id="user-input" placeholder="Type your question..." onkeydown="if (event.key === 'Enter') askQuestion()">
         <button onclick="askQuestion()">Ask</button>
     </div>
-
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
     <script>
+        var randomString = "";
+        const socket = io.connect('http://localhost:5000');
+        function generateRandomString(length) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
 
-        function askQuestion() {
+
+
+                function askQuestion() {
+            randomString = generateRandomString(10);
             var userQuestion = document.getElementById("user-input").value;
             document.getElementById("chat").innerHTML +=
                 "<div class='message-container'>" +
                 "<div class='user-message'><img class='user-icon' src='/static/user.png' alt='User Icon'><md-block>" + userQuestion + "</md-block></div>" +
                 "</div>";
-
+             // Clear input after asking
+            document.getElementById("user-input").value = "";
 
             // Send the question to the Flask server
-            fetch('/ask', {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ question: userQuestion }),
-            })
-            .then(response => {
-                // Set up the EventSource to listen for the SSE stream
-                const eventSource = new EventSource("/ask");
 
-                eventSource.onmessage = function(event) {
-                document.getElementById("chat").innerHTML +=
-                    "<div class='message-container'>" +
-                    "<div class='bot-message'><img class='bot-icon' src='/static/chris_bot.png' alt='Bot Icon'><md-block>" + event.data + "</md-block></div>" +
-                    "</div>";
+            socket.emit('start_stream', { message: userQuestion });
+                             document.getElementById("chat").innerHTML +=
+                    `<div class='message-container'>
+                    <div class='bot-message'><img class='bot-icon' src='/static/chris_bot.png' alt='Bot Icon' ><md-block id=${randomString}> </md-block></div>
+                    </div>`;
+           }
 
-                    // Auto-scroll to the bottom of the chat box
-                    chatBox.scrollTop = chatBox.scrollHeight;
-                };
+
+            socket.on('stream_response', function(data) {
+
+                            var answer = data.data;
+                            if (answer.includes(":~")){
+                            answer = ""
+                            }
+                             message = document.getElementById(`${randomString}`)
+                             message.innerHTML += answer;
+
         });
-<!--                var answer = data.answer;-->
-<!--                document.getElementById("chat").innerHTML +=-->
-<!--                    "<div class='message-container'>" +-->
-<!--                    "<div class='bot-message'><img class='bot-icon' src='/static/chris_bot.png' alt='Bot Icon'><md-block>" + answer + "</md-block></div>" +-->
-<!--                    "</div>";-->
-<!--            });-->
 
-            // Clear input after asking
-            document.getElementById("user-input").value = "";
-        }
+
     </script>
 </body>
 </html>
